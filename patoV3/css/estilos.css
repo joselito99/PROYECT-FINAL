@@ -1,0 +1,98 @@
+.letra
+{
+	color: #00F;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 18px;
+
+}
+
+.letraphp
+{
+	color:#000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+
+}
+
+
+.letrar
+{
+	color:#009;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:16px;
+
+}
+
+.parrafo
+{
+	
+	color:#900;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+
+}
+.regi
+{
+	color:#FFF;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+
+}
+
+
+.button {
+    background-color:#C60;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.error
+{
+	color:#F00;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:24px;
+}
+
+.tiutlo
+{
+	color:#600;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:24px;
+}
+
+.buttonregistro {
+    background-color:#000;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttoncrud {
+    background-color:#09C;
+    border: none;
+    color:#F00;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+
+
+
+
