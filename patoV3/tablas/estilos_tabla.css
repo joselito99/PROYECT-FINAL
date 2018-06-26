@@ -1,0 +1,88 @@
+.padre_tabla {
+  /* IMPORTANTE */
+  text-align: center;
+  color:black;
+}
+
+.hijo_tabla {
+ 
+  padding: 50px;
+  width:980px;
+  margin: 25px;
+  
+  /* IMPORTANTE */
+  display: inline-block;
+}
+
+/* TABLA FORMATO*/
+body{
+	background-color: #632432;
+	font-family: Arial;
+}
+
+.main-container
+{
+	margin: 150px auto;
+	width: 600px ;
+
+}
+.table_form
+{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse; 
+	width: 100%; 
+}
+th, td
+{
+	padding: 20px;
+}
+
+thead
+{
+	background-color: #2EBCBC	;
+	border-bottom: solid 5px #0A2A1B;
+	color: white;
+}
+
+tr:nth-child(even)
+{
+	background-color: #ddd;
+}
+
+tr:hover td
+{
+	background-color: #585858;
+	color: white;
+}
+
+/* TRANSICION DE LA TABLA*/
+/*table:hover
+{
+	-webkit-transform:scale(1.10);
+	-ms-transform:scale(1.10);
+	-o-transform:scale(1.10);
+	transform: :scale(1.10);
+}*/
+/* TRANSICION DE LA TABLA*/
+
+
+
+
+/* TABLA FORMATO*/
+
+
+/*BOTON*/
+
+.buttoncrud {
+    background-color:#09C
+    border: none;
+    color:#F00;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
