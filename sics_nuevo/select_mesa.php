@@ -1,5 +1,5 @@
 <?php
-
+// seguridad mesero
 include("seguridad_mesero.php");
 
 ?>
