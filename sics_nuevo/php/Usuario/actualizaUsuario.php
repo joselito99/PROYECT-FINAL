@@ -9,6 +9,7 @@ require_once ("../conexion.php");
 	$dir=$_POST['Direccion_usuario'];
 	$con=$_POST['Contrasena'];
 	$correo=$_POST['Correo_usuario'];
+	$fecha=$_POST['Fecha_registro_usuario'];
 	$estado=$_POST['Estado_usuario'];
 
 
@@ -20,6 +21,7 @@ require_once ("../conexion.php");
 								Direccion_usuario='$dir',
 								Contrasena='$con',
 								Correo_usuario='$correo',
+								Fecha_registro_usuario='$fecha',
 								Estado_usuario='$estado'
 				where Documento_usuario='$d'";
 	echo $result=mysqli_query($conexion,$sql);

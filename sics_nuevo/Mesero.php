@@ -22,7 +22,7 @@ include("seguridad_mesero.php");
     <link rel="stylesheet" href="css/form_estilo.css">
 </head>
 
-<body>
+<body style="background-image: url(fondo1.jpg);">
 
 
 
@@ -44,7 +44,7 @@ include("seguridad_mesero.php");
             
              <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                <li><a href="Mesero.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 				
                 <li><a href="salir.php"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> SALIR</a></li>
             </ul>

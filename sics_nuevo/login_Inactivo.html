@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login |SICS|</title>
+    <link rel="stylesheet" href="css/estilos_login.css">
+    <link rel="stylesheet" href="css/form_estilo.css">
+</head>
+
+<body>
+      
+
+<p class="textoproducto">¡ERROR! Usuario Desabilitado por favor comuniquese con el Administrador</p>
+    <div class="contenedor-form">
+
+        <div class="toggle">
+           <span><a href="registro.php">  Crear Cuenta </a></span>
+
+        </div>
+        
+        <div class="formulario">
+            <h2>Iniciar Sesión</h2>
+            <form action="evaluar_sesion.php" method="post"  autocomplete="OFF">
+                <input type="text" placeholder="Documento" id="Documento_usuario" name="Documento_usuario"  required>
+                <input type="password" placeholder="Password" id="Contrasena" name="Contrasena" required>
+                <input type="submit" value="Iniciar Sesión">
+            </form>
+        </div>
+        
+        <div class="reset-password">
+            <a href="#">Olvide mi Contraseña?</a>
+        </div>
+    </div>
+    <script src="js/jquery-3.1.1.min.js"></script>    
+    <script src="js/main.js"></script>
+</body>
+</html>

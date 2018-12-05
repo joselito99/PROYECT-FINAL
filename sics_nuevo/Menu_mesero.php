@@ -93,10 +93,10 @@
                                 <ul>
                                     
                                     <li>
-                                        <a href="select_mesa.php">Listar Venta</a>
+                                        <a href="select_mesa.php">Agregar Venta</a>
                                     </li>
                                     <li>
-                                        <a href="#">Cantidad Ventas</a>
+                                        <a href="Listado_venta.php">Listar Ventas</a>
                                     </li>
                                 </ul>
                             </div>
