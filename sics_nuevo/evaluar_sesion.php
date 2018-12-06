@@ -11,48 +11,54 @@ class Login
 		session_start();
 		$cont=0;
 		// CONSULTAR DE LA BASE DE DATOS
-		
+
 		include ('conexion.php');
 
-		$sql="SELECT idusuario, Documento_usuario, Contrasena, rol_idRol FROM usuario INNER JOIN permisos ON idusuario=usuario_idUsuario WHERE Documento_usuario = '$Documento_usuario'";
+		$sql="SELECT idUsuario, Documento_usuario, Contrasena, Estado_usuario, rol_idRol FROM usuario INNER JOIN permisos ON idUsuario=usuario_idUsuario WHERE Documento_usuario = '$Documento_usuario'";
 
 
-// COMIENZO DE PRUEBA // 
+// COMIENZO DE PRUEBA //
 
 
 	/* 1 */	if (!$result = $db->query($sql)){
 				/* 2 */ die ('Error de conexion[' . $db->error . ']');
 			}
-			
+
 		/* 3 */	while ($row=$result->fetch_assoc())
 			{
-				$ccontrasena=stripslashes($row["Contrasena"]);
-			/* 4 */	$ddocumento=stripslashes($row["Documento_usuario"]);
-						$iid_rol=stripslashes($row["rol_idRol"]);
+				$ccontrasena           =     stripslashes($row["Contrasena"]);
+				$EEstado_usuario       =     stripslashes($row["Estado_usuario"]);
+	/* 4 */ 	$ddocumento            =     stripslashes($row["Documento_usuario"]);
+	            $iid_rol               =     stripslashes($row["rol_idRol"]);
+				
+				$ddusuario =	 stripslashes($row["idUsuario"]);
+				$_SESSION["idUsuario"]=$ddusuario;
+				
 
 							/* 5 */								/* 6 */
 				if (($ccontrasena==$Contrasena) && ($ddocumento==$Documento_usuario))
 				{		/* 7 */
 					$cont=$cont+1;
 				}
-				
+
 			}
-				
-				
-		// FIN DE CONSULTA 
+
+
+		// FIN DE CONSULTA
 		
-		
-			/* 8 */
-		if ($cont!="0")
+				
+				/* 8 */
+		if ($cont!="0" && $EEstado_usuario!="2" )
 		{
-			$_SESSION["estado"]="1";
+				
+			   $_SESSION["estado"]="1";	
+			
 			/* 9 */
 			$_SESSION["Documento_usuario"]=$Documento_usuario;
-			
-			
-				
+			$_SESSION["Estado_usuario"]=$EEstado_usuario;
+
 					/* 10 */
-			if ($iid_rol=="9")
+			if ($iid_rol=="9" )
 			{
 						/* 11 */
 				$_SESSION["rol_idRol"]="9";
@@ -60,36 +66,43 @@ class Login
 			}
 
 				/* 12 */
-			if ($iid_rol=="11")
+			if ($iid_rol=="11" )
 			{
 						/* 13 */
 				$_SESSION["rol_idRol"]="11";
 				header ("location: Mesero.php");
 			}
-			
+
 					/* 14 */
-			if ($iid_rol=="10")
-			{	
+			if ($iid_rol=="10" )
+			{
 						/* 15 */
 				$_SESSION["rol_idRol"]="10";
 				header ("location: Bodeguero.php");
-			}		
-		
+			}
 		}
+
+
+
+		
 				/* 16 */
-		if ($cont=="0")
-		{	
-
-
-			include ("login_error.html");
-
-
-		}
-
-		// FIN DE PRUEBA //
-		
-	}
 	
+		if ($cont=="0" ) 
+		{
+			include ("login_error.html");
+        }
+			elseif ($EEstado_usuario=="2")
+		   {
+
+            include ("login_Inactivo.html");
+			
+	 	   }
+		
+		
+		// FIN DE PRUEBA //
+
+	}
+
 }
 
 $nuevo=new Login();

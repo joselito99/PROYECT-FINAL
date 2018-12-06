@@ -149,7 +149,7 @@ $cart = new Cart;
             <td><a href="../Venta.php" class="btn btn-warning"><i class="glyphicon glyphicon-menu-left"></i> Continue Comprando</a></td>
             <td colspan="2"></td>
             <?php if($cart->total_items() > 0){ ?>
-            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' USD'; ?></strong></td>
+            <td class="text-center"><strong>Total <?php echo '$'.$cart->total().' '; ?></strong></td>
             <td><a href="checkout.php" class="btn btn-success btn-block">Siguiente <i class="glyphicon glyphicon-menu-right"></i></a></td>
             <?php } ?>
         </tr>

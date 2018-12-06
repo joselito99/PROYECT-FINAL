@@ -152,8 +152,8 @@ include("seguridad_admin.php");
   <?php
          
           include ('conexion.php');
-          $sql1="SELECT * FROM estados";
-          if (!$result1=$db->query($sql1))
+          $sql2="SELECT * FROM estados";
+          if (!$result1=$db->query($sql2))
           {
             die('NO conecta [' . $db->error .']');
           }

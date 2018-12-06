@@ -74,7 +74,10 @@
                             <span>Online</span>
                         </span>
                     </div>
+
+
                 </div>
+                <CENTER><a class="boton_personalizado" href="cambiar_password_bodeguero.php">CAMBIAR CONTRASEÑA</a></CENTER>
                 
 
 

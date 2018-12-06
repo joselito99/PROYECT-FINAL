@@ -55,7 +55,7 @@
                 </div>
                 <div class="sidebar-header">
                     <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="images/user.jpg" alt="User picture">
+                        <a href="perfil_usuario.php"><img class="img-responsive img-portfolio img-hover" src="images/user.jpg" alt="User picture"></a>
                     </div>
                     <div class="user-info">
                         <span class="user-name">
@@ -71,17 +71,19 @@
                         <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
-                        </span>
+                        </span> <BR>                       
                     </div>
                 </div>
                 
 
 
                 <div class="sidebar-menu">
+                    <CENTER><a href="perfil_usuario.php"><button class="btn btn-primary"> PERFIL</button></a></CENTER>
                     <ul>
                         <li class="header-menu">
                             <span>Inicio</span>
                         </li>
+
                         <li class="sidebar-dropdown">
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
@@ -109,6 +111,17 @@
                                 <ul>
                                     <li>
                                         <a href="#">Reporte de Ventas</a>
+                                        <div class="sidebar-dropdown">
+                                            <ul>
+                                                <li>
+                                                    <a href="reporte_mesa.php"> Reporte Por Mesa</a>
+                                                </li>
+                                                   <li>
+                                                    <a href="reporte_ventas_usuario.php"> Reporte Por Usuario</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
                                     </li>
                                    
                                     <li>
@@ -165,17 +178,12 @@
                         
                     </ul>
                 </div>
-                <!-- sidebar-menu  -->
             </div>
             <!-- sidebar-content  -->
             <div class="sidebar-footer">
-                <a href="#">
-                    <i class="fa fa-bell"></i>
-                    <span class="label label-warning notification">3</span>
-                </a>
-                
-                <a href="salir.php">
-                    <i class="fa fa-power-off"></i>
-                </a>
+                <div class="sidebar-footer">
+               <a href="#">
+                   <i class="fa fa-bell"></i>
+               </a>
             </div>
         </aside>

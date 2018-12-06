@@ -1,5 +1,5 @@
 <?php
-// seguridad mesero
+
 include("seguridad_mesero.php");
 
 ?>
@@ -18,6 +18,7 @@ include("seguridad_mesero.php");
     <link rel="stylesheet" href="css/css_menu/custom.css">
     <link rel="stylesheet" href="css/css_menu/custom-themes.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/figure_mesa.css" >
 
 
       <link href="css/multiselect.css" rel="stylesheet"/>
@@ -70,7 +71,7 @@ include("seguridad_mesero.php");
             
              <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                <li><a href="Mesero.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 				
                 <li><a href="salir.php"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> SALIR</a></li>
             </ul>
@@ -118,7 +119,9 @@ include("seguridad_mesero.php");
   <div id="products">
         <div class="item  col-xs-4 col-lg-4">
               <form method="POST" action="Venta.php">       
-                <button type="submit" name="Numero_mesa" id="Numero_mesa" value="<?php echo $row["Numero_mesa"]; ?>"><img src="images/mesa.png" width="300px" > </button>
+               <figure id="photo" title="<?php echo $row["Numero_mesa"];?>">                   
+                <button type="submit" name="idMesa" class="btn btn-link" id="idMesa" value="<?php echo $row["idMesa"]; ?>"><img src="images/mesa.png" width="250px"> </button>
+        </figure>
                   <!-- Consulta Usuario --> 
               </form>
             </div>

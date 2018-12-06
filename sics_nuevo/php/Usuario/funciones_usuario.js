@@ -19,7 +19,8 @@ function agregaformuser(datosusuario){
 	$('#Direccion_user').val(d[6]);
 	$('#Contrasena_user').val(d[7]);
 	$('#Correo_user').val(d[8]);
-	$('#Estado_user').val(d[9]);
+	$('#Fecha_user').val(d[9]);
+	$('#Estado_user').val(d[10]);
 	
 }
 
@@ -35,6 +36,7 @@ function actualizaUsuario(){
 	Direccion_usuario=$('#Direccion_user').val();
 	Contrasena=$('#Contrasena_user').val();
 	Correo_usuario=$('#Correo_user').val();
+	Fecha_registro_usuario=$('#Fecha_user').val();
 	Estado_usuario=$('#Estado_user').val();
 	cadena= "idUsuario=" + idUsuario +
 			"&Nombre_usuario=" + Nombre_usuario + 
@@ -45,6 +47,7 @@ function actualizaUsuario(){
 			"&Direccion_usuario=" + Direccion_usuario +
 			"&Contrasena=" + Contrasena +
 			"&Correo_usuario=" + Correo_usuario +
+			"&Fecha_registro_usuario=" + Fecha_registro_usuario +
 			"&Estado_usuario=" + Estado_usuario;
 
 	$.ajax({

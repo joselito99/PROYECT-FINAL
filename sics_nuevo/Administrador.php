@@ -19,10 +19,13 @@ include("seguridad_admin.php");
     <link rel="stylesheet" href="css/css_menu/custom-themes.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
-    <link rel="stylesheet" href="css/form_estilo.css">
+
+    <link rel="stylesheet" href="css/form_estilo.css" >
+    <link href="css/personalizado.css" rel="stylesheet">
 </head>
 
-<body>
+9
+<body style="background-image: url(fondo1.jpg);">
 
 
 

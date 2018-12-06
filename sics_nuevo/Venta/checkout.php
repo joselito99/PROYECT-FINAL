@@ -121,7 +121,7 @@ $custRow = $query->fetch_assoc();
       <h4> <center> <strong>Mesa<p> <?php echo $_SESSION["nnumeromesa"];  ?></p></strong></center></h4>
     </div>
 
-    <h1>Vista Orden</h1>
+    <h1>Vista de Orden</h1>
     <table class="table">
     <thead>
         <tr>

@@ -159,12 +159,14 @@ include("seguridad_admin.php");
             <input type="text" name="" id="Contrasena_user" class="form-control input-sm" readonly>
             <label>Correo</label>
             <input type="text" name="" id="Correo_user" class="form-control input-sm">
+            <label>Fecha</label>
+            <input type="text" name="" id="Fecha_user" class="form-control input-sm">
             <label>Estado</label>
             <select name="Estado_usuario" id="Estado_user" class="form-control input-sm">
                     
               <!-- Consulta Tipo Documento -->
                       <?php
-                      $sql="SELECT * FROM estados";
+                      $sql="SELECT * FROM estados WHERE idestados BETWEEN 1 AND 2 ";
 
                       if (!$result=$db->query($sql))
                     {

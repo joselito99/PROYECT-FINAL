@@ -127,6 +127,8 @@ include("seguridad_admin.php");
             <input type="text" name="" id="Cantidad_pro" class="form-control input-sm">
             <label>Precio</label>
             <input type="text" name="" id="Precio_pro" class="form-control input-sm">
+            <label>Fecha</label>
+            <input type="date" name="" id="Fecha_pro" class="form-control input-sm">
             <label>Estado</label>
              <select name="Estado_pro" id="Estado_pro" class="form-control input-sm">
   <option placeholder="Seleccione Estado">

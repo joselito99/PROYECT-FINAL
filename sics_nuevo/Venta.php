@@ -4,6 +4,8 @@ include("seguridad_mesero.php");
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,38 +20,27 @@ include("seguridad_mesero.php");
     <link rel="stylesheet" href="css/css_menu/custom.css">
     <link rel="stylesheet" href="css/css_menu/custom-themes.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
-
       <link href="css/multiselect.css" rel="stylesheet"/>
       <link href="css/botonform.css" rel="stylesheet"/>
-  <script src="js/multiselect.min.js"></script>
-
+      <script src="js/multiselect.min.js"></script>
 
 <!--- LINK REGISTRPO VENTAS -->
-<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
     <link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
-
     <script src="librerias/jquery-3.2.1.min.js"></script>
-  <script src="php/Venta/funciones_venta.js"></script>
+    <script src="php/Venta/funciones_venta.js"></script>
     <script src="librerias/bootstrap/js/bootstrap.js"></script>
     <script src="librerias/alertifyjs/alertify.js"></script>
-
 <!--- LINK REGISTRPO VENTAS -->
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- LINKS MENUS -->
-
-
-        <link rel="stylesheet" href="css/estilosproductos.css">
+<link rel="stylesheet" href="css/estilosproductos.css">
 <!-- LINKS MENUS -->
-
-    <script src="vistas/js/jquery-3.2.1.js"></script>
-
-    <link rel="stylesheet" href="css/form_estilo.css">
+<script src="vistas/js/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="css/form_estilo.css">
 </head>
 
 <body style="background-image: url(fondo1.jpg);">
@@ -70,7 +61,7 @@ include("seguridad_mesero.php");
 
              <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+                <li><a href="Mesero.<?php  ?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
 
                 <li><a href="salir.php"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> SALIR</a></li>
             </ul>
@@ -90,7 +81,7 @@ include("seguridad_mesero.php");
         <!-- sidebar-wrapper  -->
         <main class="page-content" >
             <div class="container-fluid" >
-                <div class="row" >
+
 
                    <!--- contenido de la pagina -->
 
@@ -118,7 +109,8 @@ include("seguridad_mesero.php");
         $nnumeromesa=stripslashes($row["Numero_mesa"]);
         $_SESSION["nnumeromesa"]=stripslashes($row["Numero_mesa"]);
 
-
+   
+        $_SESSION["iidmesa"]=stripslashes($row["idMesa"]);      
         }
 
   }
@@ -126,7 +118,9 @@ include("seguridad_mesero.php");
 }
 
 $nuevo=new Mesa();
-$nuevo->listamesa($_POST["Numero_mesa"]);
+if (isset($_POST['Numero_mesa'])) {
+  $nuevo->listamesa($_POST['Numero_mesa']);
+}
 
 ?>
 
@@ -144,46 +138,45 @@ $nuevo->listamesa($_POST["Numero_mesa"]);
 
     </div>
 
+    <center>  <a href="select_mesa.php" class="btn btn-success" role="button">Seleccione Mesa</a></center>
+
 
 <!-- VENTAS -->
-<div id="products" class="row list-group">
+<div class="panel-body">
+
+  <div id="products" class="row list-group">
+
+
  <?php
         //get rows query
-        $query = $db->query("SELECT * FROM platos ORDER BY id DESC LIMIT 10");
-        if($query->num_rows > 0){
+        $query = $db->query("SELECT * FROM platos ORDER BY idPlatos DESC LIMIT 10");
+        if($query->num_rows > 0){ 
             while($row = $query->fetch_assoc()){
-  ?>
-
-        <div class="item  col-xs-4 col-lg-4">
+        ?>
+        <div class="item col-lg-4" style="border-radius:5px;">
             <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
-                <div class="caption">
-                    <h4 class="list-group-item-heading">
-                        <?php echo $row["Nombre_plato"]; ?></h4><br>
-                    <p class="list-group-item-text">
-                       <?php echo $row["Descripcion_plato"]; ?></p>
-
+                <img src="img/<?php echo $row["Imagen_plato"]; ?>" class="img-responsive" /><br />  
+                <div class="caption" align="center">
+                    <h4 class="list-group-item-heading"><?php echo $row["Nombre_plato"]; ?></h4>
+                    <p class="list-group-item-text"><?php echo $row["Descripcion_plato"]; ?></p>
                     <div class="row">
-                       <div class="col-md-6">
-                            <p class="lead"><?php echo '$'.$row["Valor_plato"].''; ?></p>
+                        <div class="col-md-6">
+                            <p class="lead"><?php echo '$'.$row["Precio_plato"].' '; ?></p>
                         </div>
-
-
-                        <div class="col-xs-12 col-md-6">
-                           <a class="btn btn-success" href="AccionCarta.php?action=addtocart&id=<?php echo $row["id"]; ?>">Comprar</a>
+                        <div class="col-md-6">
+                            <a class="btn btn-success" href="Venta/cartAction.php?action=addToCart&id=<?php echo $row["idPlatos"]; ?>">COMPRAR</a>
                         </div>
-
                     </div>
                 </div>
             </div>
-  </div>
-   <?php } }else{ ?>
-        <p>Producto(s) no existe.....</p>
+        </div>
+        <?php } }else{ ?>
+        <p>No existen Productos.....</p>
         <?php } ?>
 
 <!-- VENTAS -->
  </div>
-
+</div>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
